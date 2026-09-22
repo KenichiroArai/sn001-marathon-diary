@@ -32,9 +32,6 @@ target/
 *.ipr
 *.iws
 .vscode/
-.classpath
-.project
-.settings/
 bin/
 
 # OS
