@@ -15,16 +15,34 @@
     <artifactId>sn001-marathon-diary</artifactId>
     <version>0.1.0</version>
     <name>sn001-marathon-diary</name>
-    <description>Marathon diary application</description>
+    <description>マラソン日記</description>
 
     <properties>
         <java.version>25</java.version>
+        <dbflute.version>1.3.1</dbflute.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.dbflute</groupId>
+            <artifactId>dbflute-runtime</artifactId>
+            <version>${dbflute.version}</version>
         </dependency>
 
         <dependency>
@@ -39,6 +57,24 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.dbflute</groupId>
+                <artifactId>dbflute-maven-plugin</artifactId>
+                <version>1.1.0</version>
+                <configuration>
+                    <dbfluteVersion>${dbflute.version}</dbfluteVersion>
+                    <clientProject>marathon</clientProject>
+                    <packageBase>kmg.sn.sn001.dbflute</packageBase>
+                    <database>postgresql</database>
+                    <databaseDriver>org.postgresql.Driver</databaseDriver>
+                    <databaseUrl>jdbc:postgresql://localhost:5432/marathon</databaseUrl>
+                    <databaseSchema>public</databaseSchema>
+                    <databaseUser>marathon</databaseUser>
+                    <databasePassword>marathon</databasePassword>
+                    <targetLanguage>java</targetLanguage>
+                    <targetContainer>spring</targetContainer>
+                </configuration>
             </plugin>
         </plugins>
     </build>

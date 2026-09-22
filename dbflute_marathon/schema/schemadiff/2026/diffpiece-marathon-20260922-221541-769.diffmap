@@ -1,0 +1,17 @@
+map:{
+    ; 2026/09/22 22:15:41.769 = map:{
+        ; diffDate = 2026/09/22 22:15:41.769
+        ; tableCount = map:{
+            ; next = 1
+            ; previous = 0
+        }
+        ; diffAuthor = KenichiroArai
+        ; diffGitBranch = main
+        ; tableDiff = map:{
+            ; diary = map:{
+                ; tableName = diary
+                ; diffType = ADD
+            }
+        }
+    }
+}
