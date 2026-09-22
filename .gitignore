@@ -26,6 +26,9 @@ replay_pid*
 # Maven
 target/
 
+# Node / frontend
+frontend/node_modules/
+
 # IDE
 .idea/
 *.iml
